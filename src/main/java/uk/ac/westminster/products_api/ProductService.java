@@ -17,7 +17,12 @@ public class ProductService {
                 "/downloads/clean-code.pdf", 4.2));
         products.add(new PhysicalProduct(
                 nextId++, "27-inch Monitor", 249.99,
-                5.4, "61cm x 41cm x 18cm"));
+                5.4, "61cm x 41cm x 18cm") {
+            @Override
+            public String getSummary() {
+                return "";
+            }
+        });
     }
 
     public List<Product> getAllProducts() {

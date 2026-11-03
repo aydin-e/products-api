@@ -1,6 +1,6 @@
 package uk.ac.westminster.products_api;
 
-public class PhysicalProduct extends Product{
+public abstract class PhysicalProduct extends Product {
 
     private double weightKg;
     private String dimensions;
