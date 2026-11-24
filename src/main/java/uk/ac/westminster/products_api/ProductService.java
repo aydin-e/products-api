@@ -1,6 +1,8 @@
 package uk.ac.westminster.products_api;
 
 import org.springframework.stereotype.Service;
+import uk.ac.westminster.repository.ProductRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +12,11 @@ public class ProductService {
 
     private List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
+    private final ProductRepository repository;
 
-    public ProductService() {
+    public ProductService(ProductRepository repository) {
+        this.repository = repository;
+
         products.add(new DigitalProduct(
                 nextId++, "Clean Code (E-book)", 29.99,
                 "/downloads/clean-code.pdf", 4.2));
